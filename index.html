@@ -64,7 +64,7 @@
 			<div class="container">
 				<h2>Demo</h2>
 				<p>
-
+					<textarea></textarea>
 				</p>
 			</div>
 		</div>
@@ -123,4 +123,23 @@
 	</body>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" defer></script>
 	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" defer></script>
+	<script type="text/javascript" src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+  	<script type="text/javascript">
+
+		tinymce.init({
+			selector:'textarea',
+            plugins: "code, link, image, textcolor, paste",
+            toolbar: "undo redo | bold italic forecolor | bullist numlist | link image gallery",
+            paste_as_text: true,
+			setup: function (ed) {
+		    	ed.addButton('gallery', {
+					text: 'Gallery',
+		         	onclick : function() {
+		            	alert("ok");
+		         	}
+		      });
+		    }
+		});
+
+	</script>
 </html>
