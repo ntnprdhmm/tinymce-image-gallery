@@ -160,6 +160,11 @@
 				$('#gallery').append('<div class="col-lg-3 col-md-4 col-xs-6 gallery-img-container"><img class="img-responsive gallery-img" src="images/img' + i + '.png"></div>');
 			}
 
+			// event on images
+			$('.gallery-img').on('click', function() {
+	            $(tinymce.activeEditor.getBody()).find('p:last').append($(this).clone());
+			});
+
 			// build the tinymce textarea
 			tinymce.init({
 				selector:'textarea',
