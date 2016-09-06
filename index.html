@@ -17,6 +17,7 @@
 				        <li><a href="#html_code">HTML</a></li>
 						<li><a href="#js_code">JavaScript</a></li>
 						<li><a href="#css_code">CSS</a></li>
+						<li><a href="#ajax_code">Load from server</a></li>
 			      	</ul>
 		    	</div>
 		  	</div>
@@ -38,22 +39,24 @@
 							<b>TinyMCE</b> (obviously...)
 						</li>
 					</ul>
+				</p>
+				<p>
 					How does it works ?
 					<ul>
 						<li>
 							First, we have to add a button in the TinyMCE toolbar to open a <a href="http://getbootstrap.com/javascript/#modals">bootstrap modal</a>.
 						</li>
 						<li>
-							Then, we need to load images from your server and display them on the modal.
+							Then, we need to load images and display them on the modal.
 						</li>
 						<li>
 							To finish, we will make it possible to insert these images in the TinyMCE field.
 						</li>
-						<li class="optionnal">
-							If you want, you can add an upload button directly in the modal.
-						</li>
 					</ul>
 	  		  	</p>
+				<p>
+					For this demo, i work with static images. If you want to load images from your server with ajax, i give you a code example <a href="#ajax_code">in the bottom</a>.
+				</p>
 	  		  	<p>
 	  			  	<a class="btn btn-primary btn-lg pull-right" href="#html_code">go to source code</a>
 	  		  	</p>
@@ -77,13 +80,7 @@
 						<h4 class="modal-title">Gallery</h4>
 					</div>
 					<div class="modal-body">
-						<div class="row">
-							<div id="gallery">
-								<!-- <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-									<img class="img-responsive thumb-img" src="">
-								</div> -->
-							</div>
-						</div>
+						<div id="gallery" class="row"></div>
 					</div>
 				</div>
 			</div>
@@ -115,6 +112,15 @@
 				</p>
 			</div>
 		</div>
+		<!-- AJAX -->
+		<div class="jumbotron" id="ajax_code">
+			<div class="container">
+				<h2>AJAX</h2>
+				<p>
+
+				</p>
+			</div>
+		</div>
 		<!-- FOOTER -->
 		<footer>
 		    <div class="footer" id="footer">
@@ -141,24 +147,35 @@
 		    </div>
 		</footer>
 	</body>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" defer></script>
-	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" defer></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="//cdn.tinymce.com/4/tinymce.min.js"></script>
   	<script type="text/javascript">
 
-		tinymce.init({
-			selector:'textarea',
-            plugins: "code, link, image, textcolor, paste",
-            toolbar: "undo redo | bold italic forecolor | bullist numlist | link image gallery",
-            paste_as_text: true,
-			setup: function (ed) {
-		    	ed.addButton('gallery', {
-					text: 'Gallery',
-		         	onclick : function() {
-		            	 $('#gallery-modal').modal('show');
-		         	}
-		      });
-		    }
+		$(document).ready(function() {
+
+			// add images to gallery
+			for(let i = 1; i <=8; i++) {
+				console.log("ok");
+				$('#gallery').append('<div class="col-lg-3 col-md-4 col-xs-6 gallery-img-container"><img class="img-responsive gallery-img" src="images/img' + i + '.png"></div>');
+			}
+
+			// build the tinymce textarea
+			tinymce.init({
+				selector:'textarea',
+	            plugins: "code, link, image, textcolor, paste",
+	            toolbar: "undo redo | bold italic forecolor | bullist numlist | link image gallery",
+	            paste_as_text: true,
+				setup: function (ed) {
+			    	ed.addButton('gallery', {
+						text: 'Gallery',
+			         	onclick : function() {
+			            	 $('#gallery-modal').modal('show');
+			         	}
+			      });
+			    }
+			});
+
 		});
 
 	</script>
