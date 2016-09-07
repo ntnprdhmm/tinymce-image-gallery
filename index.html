@@ -90,7 +90,22 @@
 			<div class="container">
 				<h2>HTML</h2>
 				<p>
-
+					The gallery modal :
+<pre>
+&lt;div class=&quot;modal fade&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; id=&quot;gallery-modal&quot; aria-labelledby=&quot;gridSystemModalLabel&quot;&gt;
+	&lt;div class=&quot;modal-dialog&quot; role=&quot;document&quot;&gt;
+		&lt;div class=&quot;modal-content&quot;&gt;
+			&lt;div class=&quot;modal-header&quot;&gt;
+				&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&times;&lt;/span&gt;&lt;/button&gt;
+				&lt;h4 class=&quot;modal-title&quot;&gt;Gallery&lt;/h4&gt;
+			&lt;/div&gt;
+			&lt;div class=&quot;modal-body&quot;&gt;
+				&lt;div id=&quot;gallery&quot; class=&quot;row&quot;&gt;&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
 				</p>
 			</div>
 		</div>
@@ -99,7 +114,42 @@
 			<div class="container">
 				<h2>Javascript</h2>
 				<p>
-
+					Add the Gallery button and add listener on it to open the modal on click.
+<pre>
+tinymce.init({
+    selector:'textarea',
+    plugins: "code, link, image, textcolor, paste",
+    toolbar: "undo redo | bold italic forecolor | bullist numlist | link image gallery",
+    paste_as_text: true,
+	setup: function (ed) {
+    	ed.addButton('gallery', {
+			text: 'Gallery',
+         	onclick : function() {
+            	 $('#gallery-modal').modal('show');
+         	}
+      });
+    }
+});
+</pre>
+				</p>
+				<p>
+					The way i added the images.
+<pre>
+for(let i = 1; i <=8; i++) {
+	console.log("ok");
+	$('#gallery').append('	&lt;div class=&quot;col-lg-3 col-md-4 col-xs-6 gallery-img-container&quot;&gt;
+					&lt;img class=&quot;img-responsive gallery-img&quot; src=&quot;images/img' + i + '.png&quot;&gt;
+				&lt;/div&gt;');
+}
+</pre>
+				</p>
+				<p>
+					Add an listener on the images in the gallery. When we click on an image, add it to the textarea.
+<pre>
+$('.gallery-img').on('click', function() {
+    $(tinymce.activeEditor.getBody()).find('p:last').append($(this).clone());
+});
+</pre>
 				</p>
 			</div>
 		</div>
@@ -108,7 +158,14 @@
 			<div class="container">
 				<h2>CSS</h2>
 				<p>
-
+<pre>
+.gallery-img-container {
+    margin-top: 15px;
+}
+.gallery-img:hover {
+    cursor: pointer;
+}
+</pre>
 				</p>
 			</div>
 		</div>
