@@ -40,6 +40,10 @@ pre {
     color: #ffd900;
 }
 
+.navbar-default {
+    border: none;
+}
+
 .navbar-default .navbar-nav>li>a:hover {
     color: #fff;
 }
