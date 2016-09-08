@@ -16,8 +16,6 @@
 						<li><a href="#demo">Demo</a></li>
 				        <li><a href="#html_code">HTML</a></li>
 						<li><a href="#js_code">JavaScript</a></li>
-						<li><a href="#css_code">CSS</a></li>
-						<li><a href="#ajax_code">Load from server</a></li>
 			      	</ul>
 		    	</div>
 		  	</div>
@@ -26,6 +24,9 @@
 		<div class="jumbotron">
 			<div class="container">
 				<h1>Simple TinyMCE image gallery</h1>
+				<p class="text-center">
+					<img src="images/gallery.png" alt="tinymce-image-gallery" class="img-responsive"/>
+				</p>
 	  		  	<p>
   			  		If you're looking for a free, simple and light image gallery, you're in the right place ! All you need to integrate the few lines of code is :
 					<ul>
@@ -55,7 +56,7 @@
 					</ul>
 	  		  	</p>
 				<p>
-					For this demo, i work with static images. If you want to load images from your server with ajax, i give you a code example <a href="#ajax_code">in the bottom</a>.
+					For this demo, i work with static images, but of course you can load images with an ajax request.
 				</p>
 	  		  	<p>
 	  			  	<a class="btn btn-primary btn-lg pull-right" href="#html_code">go to source code</a>
@@ -150,31 +151,6 @@ $('.gallery-img').on('click', function() {
     $(tinymce.activeEditor.getBody()).find('p:last').append($(this).clone());
 });
 </pre>
-				</p>
-			</div>
-		</div>
-		<!-- CSS -->
-		<div class="jumbotron" id="css_code">
-			<div class="container">
-				<h2>CSS</h2>
-				<p>
-<pre>
-.gallery-img-container {
-    margin-top: 15px;
-}
-.gallery-img:hover {
-    cursor: pointer;
-}
-</pre>
-				</p>
-			</div>
-		</div>
-		<!-- AJAX -->
-		<div class="jumbotron" id="ajax_code">
-			<div class="container">
-				<h2>AJAX</h2>
-				<p>
-
 				</p>
 			</div>
 		</div>
