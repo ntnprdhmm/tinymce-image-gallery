@@ -76,14 +76,14 @@
 				<!-- DEMO -->
 				<div id="demo">
 					<h2>Demo</h2>
-					<p>
+					<div>
 						<textarea></textarea>
-					</p>
+					</div>
 				</div>
 				<!-- HTML -->
 				<div id="html">
 					<h2>HTML</h2>
-					<p>
+					<div>
 						The gallery modal :
 <pre>
 &lt;div class=&quot;modal fade&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; id=&quot;gallery-modal&quot; aria-labelledby=&quot;gridSystemModalLabel&quot;&gt;
@@ -100,12 +100,12 @@
 	&lt;/div&gt;
 &lt;/div&gt;
 </pre>
-					</p>
+					</div>
 				</div>
 				<!-- JS -->
 				<div id="js">
 					<h2>Javascript</h2>
-					<p>
+					<div>
 						Add the Gallery button and add listener on it to open the modal on click.
 <pre>
 tinymce.init({
@@ -123,8 +123,8 @@ tinymce.init({
     }
 });
 </pre>
-					</p>
-					<p>
+					</div>
+					<div>
 						The way i added the images.
 <pre>
 for(let i = 1; i <=8; i++) {
@@ -134,15 +134,15 @@ for(let i = 1; i <=8; i++) {
 				&lt;/div&gt;');
 }
 </pre>
-					</p>
-					<p>
+					</div>
+					<div>
 						Add an listener on the images in the gallery. When we click on an image, add it to the textarea.
 <pre>
 $('.gallery-img').on('click', function() {
     $(tinymce.activeEditor.getBody()).find('p:last').append($(this).clone());
 });
 </pre>
-					</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -151,15 +151,14 @@ $('.gallery-img').on('click', function() {
 		    <div class="footer" id="footer">
 		        <div class="container">
 		            <div class="row">
-		                <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
-		                    <h3>Get the code on GitHub, see me on Twitter !</h3>
-		                    <ul class="social">
-		                        <li>
-									<a href="#"><i class=" fa fa-github"></i></a>
-								</li>
-		                        <li>
-									<a href="#"><i class="fa fa-twitter"></i></a>
-								</li>
+		                <div class="col-md-12 ">
+		                    <div class="social">
+		                        <div class="col-md-6">
+									<a href="https://github.com/prudywsh/tinymce-image-gallery">Source code <i class="fa fa-github"></i></a>
+								</div>
+		                        <div class="col-md-6">
+ 									<a href="https://twitter.com/prudywsh">My Twitter <i class="fa fa-twitter"></i></a>
+								</div>
 		                    </ul>
 		                </div>
 		            </div>
@@ -167,7 +166,7 @@ $('.gallery-img').on('click', function() {
 		    </div>
 		    <div class="footer-bottom">
 		        <div class="container">
-		            <p class="pull-right">Antoine PRUDHOMME</p>
+		            <div class="pull-right name">Antoine PRUDHOMME</div>
 		        </div>
 		    </div>
 		</footer>

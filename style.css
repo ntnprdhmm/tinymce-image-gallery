@@ -11,12 +11,16 @@ body {
     background-color: #19263a !important;
 }
 
-.navbar-default .navbar-nav>li>a, .footer-bottom, .footer, #main-title {
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-nav>li>a:hover, .footer-bottom, .footer, #main-title {
     color: #fff;
 }
 
-#demo, #top, #html, #js {
+#demo, #top, #html, #js{
     padding-top: 50px;
+}
+
+#js {
+    margin-bottom: 50px;
 }
 
 #main-title, #footer {
@@ -24,9 +28,9 @@ body {
 }
 
 #main-title {
+    margin-top: 50px;
     text-align: center;
     padding: 15px 0 15px 0;
-    margin-top: 50px;
 }
 
 .gallery-img-container {
@@ -52,4 +56,22 @@ pre {
 
 .footer, .navbar {
     font-size: 21px;
+}
+
+.social .fa, .social a {
+    color: #fff;
+}
+
+.social .fa:hover, .social a:hover{
+    text-decoration: inherit;
+    color: #19263a;
+}
+
+.social > div {
+    padding: 25px 0 25px 0;
+    text-align: center;
+}
+
+.name {
+    padding: 10px 0 10px 0;
 }
