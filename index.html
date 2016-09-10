@@ -42,13 +42,13 @@
 						<img src="images/gallery.png" alt="tinymce-image-gallery" class="img-responsive"/>
 					</div>
 		  		  	<div>
-				  		All you need to integrate these few lines of code is :
+				  		All you need to integrate these few lines of code is:
 						<ul>
 							<li>
-								<b>Bootstrap</b>
+								<b>Bootstrap 3</b>
 							</li>
 							<li>
-								<b>Jquery</b>
+								<b>jQuery</b>
 							</li>
 							<li>
 								<b>TinyMCE</b> (obviously...)
@@ -70,7 +70,7 @@
 						</ul>
 		  		  	</div>
 					<div>
-						For this demo, i used static images, but of course you can load images with an ajax request.
+						For this demo, I used static images, but of course you can load images with an ajax request.
 					</div>
 				</div>
 				<!-- DEMO -->
@@ -115,17 +115,17 @@ tinymce.init({
     paste_as_text: true,
 	setup: function (ed) {
     	ed.addButton('gallery', {
-			text: 'Gallery',
-         	onclick : function() {
-            	 $('#gallery-modal').modal('show');
-         	}
+	text: 'Gallery',
+     	onclick : function() {
+        	$('#gallery-modal').modal('show');
+         }
       });
     }
 });
 </pre>
 					</div>
 					<div>
-						The way i added the images.
+						The way I added the images in the demo.
 <pre>
 for(let i = 1; i <=8; i++) {
 	console.log("ok");
@@ -136,7 +136,7 @@ for(let i = 1; i <=8; i++) {
 </pre>
 					</div>
 					<div>
-						Add an listener on the images in the gallery. When we click on an image, add it to the textarea.
+						Add a listener on the images in the gallery. When we click on an image, add it to this textarea.
 <pre>
 $('.gallery-img').on('click', function() {
     $(tinymce.activeEditor.getBody()).find('p:last').append($(this).clone());
