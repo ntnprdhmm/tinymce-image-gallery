@@ -1,18 +1,32 @@
 body {
     font-family: 'Roboto', sans-serif;
+    font-size: 16px;
 }
 
-.navbar, .jumbotron {
-    margin-bottom: 0;
+#main-container {
+    background: #E7E7E7;
 }
 
-.jumbotron {
-    background: #fff;
+.navbar, .footer-bottom {
+    background-color: #19263a !important;
 }
 
-@media screen and (min-width: 768px)
-.jumbotron  {
-    padding-bottom: 0;
+.navbar-default .navbar-nav>li>a, .footer-bottom, .footer, #main-title {
+    color: #fff;
+}
+
+#demo, #top, #html, #js {
+    padding-top: 50px;
+}
+
+#main-title, #footer {
+    background: #048EC6;
+}
+
+#main-title {
+    text-align: center;
+    padding: 15px 0 15px 0;
+    margin-top: 50px;
 }
 
 .gallery-img-container {
@@ -32,30 +46,8 @@ pre {
     text-align: left;
 }
 
-.navbar {
-    background-color: #00c7d2;
-}
-
-.navbar-default .navbar-nav>li>a {
-    color: #ffd900;
-}
-
 .navbar-default {
     border: none;
-}
-
-.navbar-default .navbar-nav>li>a:hover {
-    color: #fff;
-}
-
-.jumbotron-inverse {
-    background: #333333;
-    color: white;
-}
-
-footer {
-    background-color: #00c7d2;
-    color: #ffd900;
 }
 
 .footer, .navbar {

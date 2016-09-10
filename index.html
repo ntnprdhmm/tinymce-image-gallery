@@ -7,7 +7,7 @@
 		<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Roboto'>
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
-	<body id="top">
+	<body>
 		<!-- Fixed navbar -->
     	<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="container">
@@ -23,81 +23,68 @@
 		      		<ul class="nav navbar-nav">
 						<li><a href="#top">Top</a></li>
 						<li><a href="#demo">Demo</a></li>
-						<li><a href="#html_code">HTML</a></li>
-						<li><a href="#js_code">JavaScript</a></li>
+						<li><a href="#html">HTML</a></li>
+						<li><a href="#js">JavaScript</a></li>
 		      		</ul>
 	        	</div>
 	      	</div>
 	    </nav>
-		<!-- INTRO -->
-		<div class="jumbotron jumbotron-inverse">
-			<div class="container">
+		<!-- main content -->
+		<div id="main-container">
+			<div id="main-title">
 				<h1>Simple TinyMCE image gallery</h1>
-				<p class="text-center">
-					<img src="images/gallery.png" alt="tinymce-image-gallery" class="img-responsive"/>
-				</p>
-	  		  	<p>
-  			  		If you're looking for a free, simple and light image gallery, you're in the right place ! All you need to integrate the few lines of code is :
-					<ul>
-						<li>
-							<b>Bootstrap</b>
-						</li>
-						<li>
-							<b>Jquery</b>
-						</li>
-						<li>
-							<b>TinyMCE</b> (obviously...)
-						</li>
-					</ul>
-				</p>
-				<p>
-					How does it works ?
-					<ul>
-						<li>
-							First, we have to add a button in the TinyMCE toolbar to open a <a href="http://getbootstrap.com/javascript/#modals">bootstrap modal</a>.
-						</li>
-						<li>
-							Then, we need to load images and display them on the modal.
-						</li>
-						<li>
-							To finish, we will make it possible to insert these images in the TinyMCE field.
-						</li>
-					</ul>
-	  		  	</p>
-				<p>
-					For this demo, i work with static images, but of course you can load images with an ajax request.
-				</p>
 			</div>
-		</div>
-		<!-- DEMO -->
-		<div class="jumbotron" id="demo">
 			<div class="container">
-				<h2>Demo</h2>
-				<p>
-					<textarea></textarea>
-				</p>
-			</div>
-		</div>
-		<!-- MODAL for the demo-->
-		<div class="modal fade" tabindex="-1" role="dialog" id="gallery-modal" aria-labelledby="gridSystemModalLabel">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title">Gallery</h4>
+				<!-- INTRO -->
+				<div id="top">
+					<h2>If you're looking for a free, simple and light image gallery, you're in the right place !</h2>
+					<div class="text-center">
+						<img src="images/gallery.png" alt="tinymce-image-gallery" class="img-responsive"/>
 					</div>
-					<div class="modal-body">
-						<div id="gallery" class="row"></div>
+		  		  	<div>
+				  		All you need to integrate these few lines of code is :
+						<ul>
+							<li>
+								<b>Bootstrap</b>
+							</li>
+							<li>
+								<b>Jquery</b>
+							</li>
+							<li>
+								<b>TinyMCE</b> (obviously...)
+							</li>
+						</ul>
+					</div>
+					<div>
+						How does it works ?
+						<ul>
+							<li>
+								First, we have to add a button in the TinyMCE toolbar to open a <a href="http://getbootstrap.com/javascript/#modals">bootstrap modal</a>.
+							</li>
+							<li>
+								Then, we need to load images and display them on the modal.
+							</li>
+							<li>
+								To finish, we will make it possible to insert these images in the TinyMCE field.
+							</li>
+						</ul>
+		  		  	</div>
+					<div>
+						For this demo, i used static images, but of course you can load images with an ajax request.
 					</div>
 				</div>
-			</div>
-		</div>
-		<!-- HTML -->
-		<div class="jumbotron jumbotron-inverse" id="html_code">
-			<div class="container">
-				<h2>HTML</h2>
-				<p>
-					The gallery modal :
+				<!-- DEMO -->
+				<div id="demo">
+					<h2>Demo</h2>
+					<p>
+						<textarea></textarea>
+					</p>
+				</div>
+				<!-- HTML -->
+				<div id="html">
+					<h2>HTML</h2>
+					<p>
+						The gallery modal :
 <pre>
 &lt;div class=&quot;modal fade&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; id=&quot;gallery-modal&quot; aria-labelledby=&quot;gridSystemModalLabel&quot;&gt;
 	&lt;div class=&quot;modal-dialog&quot; role=&quot;document&quot;&gt;
@@ -113,15 +100,13 @@
 	&lt;/div&gt;
 &lt;/div&gt;
 </pre>
-				</p>
-			</div>
-		</div>
-		<!-- JS -->
-		<div class="jumbotron" id="js_code">
-			<div class="container">
-				<h2>Javascript</h2>
-				<p>
-					Add the Gallery button and add listener on it to open the modal on click.
+					</p>
+				</div>
+				<!-- JS -->
+				<div id="js">
+					<h2>Javascript</h2>
+					<p>
+						Add the Gallery button and add listener on it to open the modal on click.
 <pre>
 tinymce.init({
     selector:'textarea',
@@ -138,9 +123,9 @@ tinymce.init({
     }
 });
 </pre>
-				</p>
-				<p>
-					The way i added the images.
+					</p>
+					<p>
+						The way i added the images.
 <pre>
 for(let i = 1; i <=8; i++) {
 	console.log("ok");
@@ -149,15 +134,16 @@ for(let i = 1; i <=8; i++) {
 				&lt;/div&gt;');
 }
 </pre>
-				</p>
-				<p>
-					Add an listener on the images in the gallery. When we click on an image, add it to the textarea.
+					</p>
+					<p>
+						Add an listener on the images in the gallery. When we click on an image, add it to the textarea.
 <pre>
 $('.gallery-img').on('click', function() {
     $(tinymce.activeEditor.getBody()).find('p:last').append($(this).clone());
 });
 </pre>
-				</p>
+					</p>
+				</div>
 			</div>
 		</div>
 		<!-- FOOTER -->
@@ -185,6 +171,20 @@ $('.gallery-img').on('click', function() {
 		        </div>
 		    </div>
 		</footer>
+		<!-- MODAL for the demo-->
+		<div class="modal fade" tabindex="-1" role="dialog" id="gallery-modal" aria-labelledby="gridSystemModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Gallery</h4>
+					</div>
+					<div class="modal-body">
+						<div id="gallery" class="row"></div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</body>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
